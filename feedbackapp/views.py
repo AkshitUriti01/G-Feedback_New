@@ -55,7 +55,7 @@ def apply(request):
 
     context['reasons'] = options
     if request.POST:
-        print(f"\n{request.POST}\n")
+        # print(f"\n{request.POST}\n")
         name = request.POST['name']
         regNum = request.POST['registrationnumber'].upper()
         mobile = request.POST['MobileNumber']
@@ -94,10 +94,10 @@ def home(request):
 
 
 @login_required(login_url="feedbackapp:login")
-def view(request, regNum):
+def view(request, id):
     context = {}
     # visitor = Visitor.objects.get(regNum=regNum)
-    visitor = get_object_or_404(Visitor, regNum=regNum)
+    visitor = get_object_or_404(Visitor, id=id)
     context['visitor'] = visitor
     return render(request, 'view.html', context)
 
