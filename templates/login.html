@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex justify-center items-center h-screen">
+      <div class="w-full max-w-xs">
+        <div class="mx-auto">
+            <img src="{% static 'img/logo.png' %}" alt="" class=" mx-auto">
+        </div>
+        
+        <form
+          method="post"
+          class="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4 mt-6"
+        >
+          {% csrf_token %}
+          <h1 class="text-3xl font-bold text-center mb-5">
+            Feedback Portal
+          </h1>
+          <div class="mb-4 mt-8">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="username"
+            >
+              Username
+            </label>
+            <input
+              class="shadow appearance-none border hover:border-[#9F282C] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="username"
+              name="username"
+              type="text"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="mb-6">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="password"
+            >
+              Password
+            </label>
+            <input
+              class="shadow appearance-none border hover:border-[#9F282C] rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="password"
+              name="password"
+              type="password"
+              placeholder="******************"
+              required
+            />
+          </div>
+          <div class="flex items-center justify-between">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+              style="background-color: #9F282C;"
+            >
+              Log In
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

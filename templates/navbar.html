@@ -1,0 +1,23 @@
+{% load static %}
+
+<nav class="bg-white border-gray-200 border-b-2 shadow-xl"
+            style="border-color: #9F282C;">
+            <div class="flex items-center justify-between mx-auto my-2">
+                <div class="flex items-center justify-center sm:flex-grow">
+                    <div
+                        class="justify-center items-center h-10 sm:h-16 ml-2 sm:mr-0">
+                        <div class="mx-auto flex justify-center">
+                            <img src="{% static 'img/logo.png' %}"
+                                class="sm:pl-20 h-10 sm:h-16">
+                        </div>
+                    </div>
+                </div>
+                <div class="mr-3">
+                    <a href="{% url 'feedbackapp:logout' %}"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 sm:py-2 px-3 sm:px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="submit" style="background-color: #9F282C;">
+                        Log Out
+                    </button>
+                </div>
+            </div>
+        </nav>

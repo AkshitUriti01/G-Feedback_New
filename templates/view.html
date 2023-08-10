@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+     <nav
+      class="bg-white border-gray-200 border-b-2 shadow-xl"
+      style="border-color: #9f282c"
+    >
+      <div class="flex items-center sm:justify-center my-2 sm:flex-grow">
+        <div>
+          <img src="{% static 'img/logo.png' %}" alt="" class="ml-1 h-8 sm:h-16" />
+        </div>
+        <div class="absolute right-0 mr-3 ">
+          <a href="{% url 'feedbackapp:home' %}" class="text-black font-bold text-sm sm:text-lg pr-1 sm:px-4 py-2 rounded"
+            style=>Home</a>
+          <a href="{% url 'feedbackapp:apply' %}" class="text-black font-bold text-sm sm:text-lg pr-1 sm:px-4 py-2 rounded"
+            style=>Feedback Form</a>
+          <a
+            href="{% url 'feedbackapp:logout' %}"
+            class="text-white text-lg px-2  sm:px-4 py-2 rounded"
+            style="background-color: #9f282c"
+            >Logout</a
+          >
+        </div>
+      </div>    
+    </nav>
+    
+    <div class="mx-1">
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="grid grid-cols-12 grid-rows-3 gap-2 sm:gap-4 p-2 pt-1 mt-5 grid-flow-dense"
+        >
+          <div
+            class="col-span-12 sm:col-span-8 bg-white rounded-md px-2 py-1 border border-gray-500"
+          >
+            <h3 class="font-semibold text-md">Name</h3>
+            <p>{{visitor.name}}</p>
+          </div>
+          <div
+            class="col-span-6 sm:col-span-4 bg-white rounded-md px-2 py-1 border border-gray-500"
+          >
+            <h3 class="font-semibold text-md">Registration No</h3>
+            <p class>{{visitor.regNum}}</p>
+          </div>
+          
+          <div
+            class="col-span-6 sm:col-span-2 sm:col-span-2 bg-white rounded-md px-2 py-1 border border-gray-500"
+          >
+            <h3 class="font-semibold text-md">Mobile</h3>
+            <p>{{visitor.mobile}}</p>
+          </div>
+          <div
+            class="col-span-6 sm:col-span-4 bg-white rounded-md px-2 py-1 border border-gray-500"
+          >
+            <h3 class="font-semibold text-md">Reason for visiting</h3>
+            <p>{{visitor.reason_for_visiting}}</p>
+          </div>
+         
+          <div
+            class="col-span-6 sm:col-span-4 sm:col-span-4 bg-white rounded-md px-2 py-1 border border-gray-500"
+          >
+            <h3 class="font-semibold text-md">Whom did you meet</h3>
+            <p class="gap-1">{{visitor.whom_did_you_meet}}</p>
+          </div>
+          <div
+            class="col-span-12 sm:col-span-8  bg-white rounded-md px-2 py-1 border border-gray-500"
+          >
+            <h3 class="font-semibold text-md">Description</h3>
+            <p>{{visitor.description}}</p>
+          </div>
+          <div
+            class="col-span-8 sm:col-span-4 bg-white rounded-md px-2 py-1 border border-gray-500"
+          >
+            <h3 class="font-semibold text-md">Is Problem Solved?</h3>
+            {% if visitor.isProblemSolved %}
+            <p>Yes, the problem is solved</p>
+            {% else %}
+            <p>No, the problem is not solved</p>
+            {% endif %}
+          </div>
+          <div
+            class="col-span-4 sm:col-span-2 bg-white rounded-md px-2 py-1 border border-gray-500"
+          >
+            <h3 class="font-semibold text-md">Rating</h3>
+            <p>{{visitor.rating}}</p>
+          </div>
+        </div>
+        
+        </div>
+       
+         
+        </div> 
+        
+      </div>
+    
+  </body>
+</html>
