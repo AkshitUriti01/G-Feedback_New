@@ -85,36 +85,6 @@ def apply(request):
     return render(request, 'apply.html', context)
 
 
-def test(request):
-    if request.method == 'POST':
-        # Extract the data from the request.POST dictionary
-        name = request.POST['name']
-        regNum = request.POST['registration_id']
-        mobile = request.POST['mobile_number']
-        reason_for_visiting = request.POST['reason_for_visiting']
-        whom_did_you_meet = request.POST['whom_did_you_meet']
-        description = request.POST['description']
-        isProblemSolved = request.POST.get(
-            'problem_solved',
-            False) == 'yes'  # Convert the string value to a boolean
-        rating = int(request.POST['rating'])
-
-        # Create a new Visitor object and save it to the database
-        visitor = Visitor(name=name,
-                          regNum=regNum,
-                          mobile=mobile,
-                          reason_for_visiting=reason_for_visiting,
-                          whom_did_you_meet=whom_did_you_meet,
-                          description=description,
-                          isProblemSolved=isProblemSolved,
-                          rating=rating)
-        visitor.save()
-
-        return render(request, 'success.html')
-
-    return render(request, 'form.html')
-
-
 @login_required(login_url="feedbackapp:login")
 def home(request):
     context = {}
