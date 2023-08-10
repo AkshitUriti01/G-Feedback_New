@@ -1,4 +1,5 @@
 {% load static %}
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -76,7 +77,7 @@
                         <select id="" name="reason_for_visiting" required
                             class="w-80 sm:w-96 px-3 py-2 shadow-lg border-2 border-blue-400 rounded" type="text>
               <option value=" junk">---------------</option>
-                            <option value="junk">-- Select --</option>
+                            <option value="junk">--- select ---</option>
                             {% for st in reasons %}
                             <option value="{{ st }}">{{ st }}</option>
                             {% endfor %}
@@ -89,67 +90,23 @@
                     <div class="flex flex-col space-y-1 mx-auto sm:ml-0 md:ml-0">
                         <label for="whom_did_you_meet" class="text-md  font-medium">Whom did you meet 🫱‍🫲</label>
 
-                        {% comment %} <select id="" name="whom_did_you_meet" required
+                        <select id="" name="whom_did_you_meet" required
                             class="w-80 sm:w-96 px-3 py-2 shadow-lg border-2 border-blue-400 rounded" type="text>
               <option value=" junk">---------------</option>
                             <option value="junk">--- select ---</option>
-                            {% for st in staff %}
+                            {% for st in names %}
                             <option value="{{ st }}">{{ st }}</option>
                             {% endfor %}
 
-                        </select> {% endcomment %}
-                        <div class="relative">
-
-                            <div class="relative inline-block text-left">
-                                <div id="selectedCountryLabel"
-                                    class="bg-gray-50 w-80 sm:w-96 px-3 py-2 shadow-lg border-2 border-blue-400 rounded ">
-                                    <span id="selectedCountryText" class="w-80 sm:96">-- Select --</span>
-                                </div>
-                                <div id="countryDropdown"
-                                    class="origin-top-right absolute right-0 mt-2 w-80 sm:w-96  rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden">
-                                    <div class="option-item flex flex-row" data-country="US">
-                                        <img src="{% static 'img/1844.jpg' %}" alt="" class="h-20 w-20 m-2" />
-                                        <div class="flex items-center">Prof. Rajkumar - Associate Director (1st Year)
-                                        </div>
-                                    </div>
-                                    <div class="option-item flex flex-row" data-country="CA">
-                                        <img src="{% static 'img/120033.jpg' %}" class=" h-20 w-20 m-2">
-                                        <div class="flex items-center hover:blue-500">Dr. Rajakoti - Assistant Director
-                                            (1st Year)</div>
-                                    </div>
-                                    <div class="option-item flex flex-row" data-country="CA">
-                                        <img src="{% static 'img/7413.jpg' %}" class=" h-20 w-20 m-2">
-                                        <div class="flex items-center hover:blue-500">G.Srinivasa Rao - Junior Assistant
-                                        </div>
-                                    </div>
-                                    <div class="option-item flex flex-row" data-country="CA">
-                                        <img src="{% static 'img/7020.jpeg' %}" class=" h-20 w-20 m-2">
-                                        <div class="flex items-center hover:blue-500">B.Suresh - Junior Assistant</div>
-                                    </div>
-                                    <div class="option-item flex flex-row" data-country="CA">
-                                        <img src="{% static 'img/7713.jpg' %}" class=" h-20 w-20 m-2">
-                                        <div class="flex items-center hover:blue-500">B.Praveen Kumar - Attendant</div>
-                                    </div>
-                                    <div class="option-item flex flex-row" data-country="CA">
-                                        <img src="{% static 'img/7090.jpg' %}" class=" h-20 w-20 m-2">
-                                        <div class="flex items-center hover:blue-500">B.Appala Naidu - Attendant</div>
-                                    </div>
-                                    <div class="option-item flex flex-row" data-country="CA">
-                                        <img src="{% static 'img/501511.jpg' %}" class=" h-20 w-20 m-2">
-                                        <div class="flex items-center hover:blue-500">S.Surya Devi - Attendant</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </select>
                     </div>
-
                 </div>
                 <div class="mt-10 flex flex-col  sm:ml-0  ">
 
                     <p class="text-xl my-2 text-center font-bold">Is Your Problem Solved ❓</p>
                     <div class="mx-auto">
                         <div class="flex items-center mx-auto mb-4 mx-auto">
-                            <input required id="problem_solved_radio" type="radio" name="problem_solved" value="yes"
+                            <input required checked id="default-radio-1" type="radio" name="problem_solved" value="yes"
                                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
                             <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900">Yes, My Problem
                                 Solved
@@ -159,16 +116,16 @@
                             <input required id="problem_not_solved_radio" type="radio" name="problem_solved" value="no"
                                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2 ">
                             <label for="default-radio-2" class="ml-2 text-sm font-medium text-gray-900">No, My Problem
-                                is not Solved</label>
+                                Not Solved</label>
                         </div>
 
                     </div>
-                    <div class="flex flex-col space-y-1  mx-auto">
-                        <label for="description" id="description_label" class="text-md  font-medium" hidden> Description
+                    <div class="  flex flex-col space-y-1  mx-auto ">
+                        <label for="description" id="description_label" class="text-md  font-medium"> Description
                             🖊️</label>
-                        <input name="description" id="description_input"
+                        <input name="description" required
                             class="w-80 sm:w-96 px-3 py-2 border-2 shadow-lg border-blue-400 rounded" type="text"
-                            placeholder="Description" required hidden />
+                            placeholder="Description" />
                         </select>
 
                     </div>
@@ -213,10 +170,9 @@
         </div>
     </div>
     </div>
-
     <script>
         const starIcons = document.querySelectorAll('.star-icon');
-        const submitButton = document.getElementById('submit-button');
+        const ratingInput = document.getElementById('rating_input')
 
         starIcons.forEach((icon, index) => {
             icon.addEventListener('click', () => {
@@ -235,56 +191,6 @@
                 // Update the hidden input field value with the number of stars clicked
                 ratingInput.value = index + 1;
             });
-        });
-        function validateMobileNumber(input) {
-            const mobileNumber = input.value;
-            const regex = /^[6-9]\d{9}$/;
-
-            if (!regex.test(mobileNumber)) {
-                input.setCustomValidity("Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9");
-            } else {
-                input.setCustomValidity("");
-            }
-        }
-        const selectedCountryLabel = document.getElementById('selectedCountryLabel');
-        const selectedCountryText = document.getElementById('selectedCountryText');
-        const countryDropdown = document.getElementById('countryDropdown');
-
-        selectedCountryLabel.addEventListener('click', () => {
-            countryDropdown.classList.toggle('hidden');
-        });
-
-        countryDropdown.addEventListener('click', (event) => {
-            const selectedOption = event.target.closest('.option-item');
-            if (selectedOption) {
-                const countryValue = selectedOption.getAttribute('data-country');
-                const countryName = selectedOption.textContent.trim();
-
-                selectedCountryText.textContent = countryName;
-                selectedCountryLabel.setAttribute('data-selected', countryValue);
-                countryDropdown.classList.add('hidden');
-            }
-        });
-
-        document.addEventListener('click', (event) => {
-            if (!countryDropdown.contains(event.target) && !selectedCountryLabel.contains(event.target)) {
-                countryDropdown.classList.add('hidden');
-            }
-        });
-
-        const descriptionLabel = document.getElementById("description_label");
-        const descriptionInput = document.getElementById("description_input");
-        const notSolved = document.getElementById("problem_not_solved_radio");
-        const solved = document.getElementById("problem_solved_radio");
-
-        solved.addEventListener("click", () => {
-            descriptionLabel.style.display = "hidden";
-            descriptionInput.style.display = "hidden";
-        });
-
-        notSolved.addEventListener("click", () => {
-            descriptionLabel.style.display = "block";
-            descriptionInput.style.display = "block";
         });
     </script>
 
