@@ -76,7 +76,7 @@
                         <select id="" name="reason_for_visiting" required
                             class="w-80 sm:w-96 px-3 py-2 shadow-lg border-2 border-blue-400 rounded" type="text>
               <option value=" junk">---------------</option>
-                            <option value="junk">-- Select --</option>
+                            <option value="junk">--- Select ---</option>
                             {% for st in reasons %}
                             <option value="{{ st }}">{{ st }}</option>
                             {% endfor %}
@@ -89,16 +89,16 @@
                     <div class="flex flex-col space-y-1 mx-auto sm:ml-0 md:ml-0">
                         <label for="whom_did_you_meet" class="text-md  font-medium">Whom did you meet 🫱‍🫲</label>
 
-                        {% comment %} <select id="" name="whom_did_you_meet" required
+                        <select id="" name="whom_did_you_meet" required
                             class="w-80 sm:w-96 px-3 py-2 shadow-lg border-2 border-blue-400 rounded" type="text>
               <option value=" junk">---------------</option>
-                            <option value="junk">--- select ---</option>
-                            {% for st in staff %}
-                            <option value="{{ st }}">{{ st }}</option>
+                            <option value="junk">--- Select ---</option>
+                            {% for name in names %}
+                            <option value="{{ name }}">{{ name }}</option>
                             {% endfor %}
 
-                        </select> {% endcomment %}
-                        <div class="relative">
+                        </select>
+                        {% comment %} <div class="relative">
 
                             <div class="relative inline-block text-left">
                                 <div id="selectedCountryLabel"
@@ -140,7 +140,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </div>
 
                 </div>

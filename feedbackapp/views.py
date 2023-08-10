@@ -60,7 +60,8 @@ def apply(request):
         regNum = request.POST['registrationnumber'].upper()
         mobile = request.POST['MobileNumber']
         reason_for_visiting = request.POST['reason_for_visiting']
-        whom_did_you_meet = request.POST['whom_did_you_meet']
+        # whom_did_you_meet = request.POST['whom_did_you_meet']
+        whom_did_you_meet = 'B.Appala Naidu - Attendant'
         description = request.POST['description']
         isProblemSolved = request.POST.get('problem_solved', False) == 'yes'
         rating = request.POST['rating']
